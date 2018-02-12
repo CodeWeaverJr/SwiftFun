@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,8 +26,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auj-P8-GKg">
-                                <rect key="frame" x="153" y="359" width="68" height="30"/>
-                                <state key="normal" title="Press Me!"/>
+                                <rect key="frame" x="155" y="359" width="64" height="30"/>
+                                <state key="normal" title="Calculate"/>
                                 <connections>
                                     <action selector="myButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iS6-xs-gZ6"/>
                                 </connections>
@@ -49,21 +50,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3Z-NJ-WGV">
+                                <rect key="frame" x="163" y="154" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Addition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXo-qZ-KCr">
+                                <rect key="frame" x="243" y="159" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtraction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwR-UQ-bt1">
+                                <rect key="frame" x="43" y="159" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nYd-Ah-N0k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5hJ-5m-cBK"/>
                             <constraint firstItem="nYd-Ah-N0k" firstAttribute="top" secondItem="CHS-aa-6LF" secondAttribute="bottom" constant="23" id="6Kg-eQ-bbx"/>
+                            <constraint firstItem="hyl-ci-iup" firstAttribute="top" secondItem="w3Z-NJ-WGV" secondAttribute="bottom" constant="30" id="7Sx-uW-Qmz"/>
                             <constraint firstItem="hyl-ci-iup" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Uh-32-Jhf"/>
+                            <constraint firstItem="rXo-qZ-KCr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="139" id="HQc-d4-GFT"/>
                             <constraint firstItem="CHS-aa-6LF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IDL-re-CiS"/>
                             <constraint firstItem="CHS-aa-6LF" firstAttribute="top" secondItem="hyl-ci-iup" secondAttribute="bottom" constant="25" id="SHU-b0-uSA"/>
+                            <constraint firstItem="rXo-qZ-KCr" firstAttribute="leading" secondItem="w3Z-NJ-WGV" secondAttribute="trailing" constant="31" id="Vgu-SG-1BJ"/>
                             <constraint firstItem="auj-P8-GKg" firstAttribute="top" secondItem="nYd-Ah-N0k" secondAttribute="bottom" constant="15" id="fcO-A1-J16"/>
+                            <constraint firstItem="w3Z-NJ-WGV" firstAttribute="leading" secondItem="kwR-UQ-bt1" secondAttribute="trailing" constant="31" id="huB-KY-p9u"/>
                             <constraint firstItem="nYd-Ah-N0k" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="o8J-Xf-pi4"/>
+                            <constraint firstItem="kwR-UQ-bt1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="139" id="pnn-Fv-MvG"/>
+                            <constraint firstItem="w3Z-NJ-WGV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="su8-33-VY8"/>
                             <constraint firstItem="auj-P8-GKg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v2t-4E-x1b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="additionSwitch" destination="w3Z-NJ-WGV" id="1uz-cx-xPM"/>
                         <outlet property="bottomTextField" destination="CHS-aa-6LF" id="AiI-Cg-STj"/>
                         <outlet property="myLabel" destination="nYd-Ah-N0k" id="Ry8-4n-JTi"/>
                         <outlet property="topTextField" destination="hyl-ci-iup" id="OxN-HW-dAk"/>

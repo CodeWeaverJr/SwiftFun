@@ -15,11 +15,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    
+    @IBOutlet weak var additionSwitch: UISwitch!
+    
     @IBAction func myButton(_ sender: Any) {
         
-        print(topTextField.text!)
-        print(bottomTextField.text!)
+        let addition = additionSwitch.isOn
         
+        if addition {
+            let sum = Double(topTextField.text!)! + Double(bottomTextField.text!)!
+            myLabel.text = "\(topTextField.text!) + \(bottomTextField.text!) = \(sum)"
+        } else {
+            let sum = Double(topTextField.text!)! - Double(bottomTextField.text!)!
+            myLabel.text = "\(topTextField.text!) - \(bottomTextField.text!) = \(sum)"
+        }
+        
+       
  /*
         buttonCount += 1
         myLabel.text = "Woah Bro, you im-pressed me!"
